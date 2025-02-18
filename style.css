@@ -12,7 +12,7 @@ html {
 }
 
 .mb-50 {
-  margin-bottom: 13rem;
+  margin-bottom: 20rem;
 }
 
 .circle-number {
@@ -153,4 +153,11 @@ html {
 }
 
 @media (max-width: 992px) {
+  .class-box {
+    border: none;
+  }
+
+  .boat-deck {
+    border: none;
+  }
 }
