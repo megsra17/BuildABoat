@@ -11,6 +11,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.mb-50 {
+  margin-bottom: 13rem;
+}
+
 .circle-number {
   width: 50px;
   height: 50px;
@@ -68,7 +72,6 @@ html {
 
 .boat-deck.selected-deck {
   border-color: #bbb;
-  box-shadow: 0px 0px 15px rgba(183, 184, 184, 0.5);
   background-color: rgba(126, 126, 126, 0.05);
 }
 
@@ -150,7 +153,4 @@ html {
 }
 
 @media (max-width: 992px) {
-  .class-box {
-    width: calc(100% - 20px); /* Leaves 10px of space on each side */
-  }
 }

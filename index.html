@@ -141,11 +141,11 @@
         <section id="step3" class="my-5 text-center">
             <!-- <div class="circle-number">3</div> -->
             <h3 class="fw-light my-3 text-center"><strong>Step 3 of 3: </strong>Choose a Length</h3>
-            <div id="vclass-length" class="d-none d-flex justify-content-center gap-3 mt-5">
+            <div id="vclass-length" class="d-none d-flex justify-content-center gap-3 mt-5 mb-50">
                 <a id="v700t" class="btn btn-primary px-4 w-25">31 FT</a> <!-- V700T -->
                 <a id="v25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- V25 QS -->
             </div>
-            <div id="lclass-length" class="d-none d-flex justify-content-center gap-3 mt-5">
+            <div id="lclass-length" class="d-none d-flex justify-content-center gap-3 mt-5 mb-50">
                 <a id="L23QS" class="btn btn-primary px-4 w-25">23 FT</a> <!-- L23 QS -->
                 <a id="L25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- L25 QS -->
             </div>
@@ -154,8 +154,41 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Custom smooth scroll function with adjustable duration
+            function smoothScrollTo(sectionId, duration = 1500) {
+                const targetElement = document.getElementById(sectionId);
+                if (!targetElement) return;
+
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                // Easing function for smooth animation
+                function easeInOutQuad(time, start, change, duration) {
+                    time /= duration / 2;
+                    if (time < 1) return (change / 2) * time * time + start;
+                    time--;
+                    return (-change / 2) * (time * (time - 2) - 1) + start;
+                }
+
+                // Animation function using requestAnimationFrame
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                requestAnimationFrame(animation);
+            }
+
+            // Replace the original scrollToSection with our custom smoothScrollTo
             function scrollToSection(sectionId) {
-                document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+                smoothScrollTo(sectionId, 1500); // Adjust the duration (ms) as needed
             }
 
             function selectClass(selectedClass) {
