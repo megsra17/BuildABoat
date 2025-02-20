@@ -148,6 +148,7 @@
                 <a id="L25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- L25 QS -->
             </div>
         </section>
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
     </main>
 
     <script>
@@ -158,6 +159,22 @@
             } else {
                 header.classList.remove("header-scrolled");
             }
+
+            const btn = document.getElementById("backToTop");
+            // You can adjust the threshold as needed
+            if (window.scrollY > 500) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to the top when the button is clicked
+        document.getElementById("backToTop").addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
 
         document.addEventListener("DOMContentLoaded", function () {
