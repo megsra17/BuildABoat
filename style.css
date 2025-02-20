@@ -34,7 +34,7 @@ header {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 55px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -44,6 +44,12 @@ header {
   padding: 0;
   z-index: 1000;
   transition: opacity 0.3s ease-in-out;
+}
+
+.back-to-top span {
+  display: inline-block;
+  /* Adjust this value until the caret is centered vertically */
+  transform: translateY(11px);
 }
 
 .circle-number {

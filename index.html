@@ -148,7 +148,7 @@
                 <a id="L25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- L25 QS -->
             </div>
         </section>
-        <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+        <button id="backToTop" class="back-to-top" aria-label="Back to top"><span>^</span></button>
     </main>
 
     <script>
@@ -179,7 +179,7 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             // Custom smooth scroll function with adjustable duration
-            function smoothScrollTo(sectionId, duration = 1500) {
+            function smoothScrollTo(sectionId, duration = 1000) {
                 const targetElement = document.getElementById(sectionId);
                 if (!targetElement) return;
 
