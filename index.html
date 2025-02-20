@@ -16,11 +16,12 @@
 
 <body>
     <!-- Header -->
-    <header class="container-fluid bg-light sticky-top shadow-sm">
+    <header class="container-fluid sticky-top shadow-sm">
         <div class="d-flex justify-content-between align-items-center p-3">
             <a href="https://vanderbiltpontoons.com/" class="text-dark text-decoration-none fw-bold">
-                <img src="https://vanderbiltpontoons.com/wp-content/uploads/2024/10/Vanderbilt-Logo-Black.png"
-                    class="w-25" alt="vanderbiltpontoons">
+                <img class="w-75"
+                    src="https://vanderbiltpontoons.com/wp-content/uploads/2024/07/Vanderbilt-Logo-Tagline_white-1.png"
+                    alt="vanderbiltpontoons">
             </a>
             <div class="header-user"></div>
         </div>
@@ -31,24 +32,23 @@
         <!-- Step 1: Select Class -->
         <section id="step1" class="mt-5">
             <!-- <div class="circle-number">1</div> -->
-            <h1 class="fw-light my-3 text-center" style="letter-spacing: .5rem;">Design My Pontoon</h1>
+            <h1 class="fw-light my-3 text-center" style="letter-spacing: .5rem;">Design Your Pontoon</h1>
             <h3 class="fw-light my-3 text-center"><strong>Step 1 of 3: </strong>Choose a Class</h3>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col p-5 class-box" id="vclass" onclick="selectClass('vclass')" style="cursor:pointer;">
                     <div class="img-container">
-                        <img src="images/Vanderbilt - BAB color changer_r05v-class.png" class="img-fluid"
-                            alt="V Class Boat">
+                        <img src="images/Vanderbilt - BAB color changer_r05.png" class="img-fluid" alt="V Class Boat">
                     </div>
                     <h4 class="my-3 text-center">V CLASS</h4>
                     <p class="mb-2">The Vanderbilt flagship, the V Class elevates every journey to first class with
                         refined
                         luxury with elegance</p>
-                    <p class="mb-0 text-center"><strong>Beginning MSRP: $134,153</strong></p>
-                    <p class="mb-2 text-center"><strong>Model Lengths: 25 ft, 31 ft</strong></p>
+                    <p class="mb-0 text-center"><strong>Premium Luxury - $$$$</strong></p>
+                    <p class="mb-2 text-center"><strong>Model Lengths - 25ft, 31ft</strong></p>
                     <ul>
-                        <li>Most premium options standard</li>
-                        <li>Exclusive aft bar lounge with extended deck (V700T)
-                        </li>
+                        <li>Single and twin outboard models</li>
+                        <li>Serenity Drive™ tritoon package</li>
+                        <li>Exclusive aft bar lounge with extended deck (V700T, twin power)</li>
                     </ul>
                 </div>
                 <div class="col p-5 class-box" id="lclass" onclick="selectClass('lclass')" style="cursor:pointer;">
@@ -58,13 +58,12 @@
                     </div>
                     <h4 class="my-3 text-center">L CLASS</h4>
                     <p class="mb-2">New for 2025. The L Class delivers a dynamic blend of performance and luxury at a
-                        more accessible
-                        price</p>
-                    <p class="mb-0 text-center"><strong>Beginning MSRP: $84,922</strong></p>
-                    <p class="mb-2 text-center"><strong>Model Lengths: 23 ft, 35 ft</strong></p>
+                        more accessible price</p>
+                    <p class="mb-0 text-center"><strong>Sport Luxury - $$$</strong></p>
+                    <p class="mb-2 text-center"><strong>Model Lengths - 23ft, 25ft</strong></p>
                     <ul>
-                        <li>New for 2025 – Sport performance meets modern luxury</li>
-                        <li>Well-equipped with plush standard features
+                        <li>New for 2025 – well-equipped with plush standard features</li>
+                        <li>Serenity Drive™ tritoon package
                         </li>
                     </ul>
                 </div>
@@ -82,11 +81,10 @@
                             class="img-fluid" alt="Layout C">
                     </div>
                     <div class="col-lg-6">
-                        <h5 class="mt-3">Quad Seating with Aft Bar</h5>
+                        <h5 class="mt-3">Quad Seating with Rear Lounge</h5>
                         <ul>
                             <li>Quad chaise lounges – seating in each corner</li>
-                            <li>Exclusive aft dual bar entertainment lounge utilizing an extended deck between the
-                                outboards</li>
+                            <li>Exclusive rear entertainment lounge with extended deck</li>
                             <li>Twin outboard performance and stability</li>
                         </ul>
                     </div>
@@ -100,7 +98,7 @@
                         <h5 class="mt-3">Quad Seating</h5>
                         <ul>
                             <li>Quad chaise lounges – seating in each corner</li>
-                            <li>Single outboard performance</li>
+                            <li>Extended swim platform with pet-friendly, easy access swim ladder</li>
                         </ul>
                     </div>
                 </div>
@@ -113,7 +111,7 @@
                                 class="img-fluid" alt="Layout C">
                         </div>
                         <div class="col-lg-6">
-                            <h5 class="mt-3">Ultra Lounge</h5>
+                            <h5 class="mt-3">Rear Ultra Lounge</h5>
                             <ul>
                                 <li>Rear lounger with adjustable forward, rear, and sun bed positions</li>
                                 <li>Side-by-side front chaise lounges</li>
@@ -153,6 +151,15 @@
     </main>
 
     <script>
+        document.addEventListener("scroll", function () {
+            const header = document.querySelector("header");
+            if (window.scrollY > 50) { // adjust the threshold as needed
+                header.classList.add("header-scrolled");
+            } else {
+                header.classList.remove("header-scrolled");
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", function () {
             // Custom smooth scroll function with adjustable duration
             function smoothScrollTo(sectionId, duration = 1500) {
