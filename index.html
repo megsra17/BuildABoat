@@ -186,9 +186,10 @@
                 // Get the header height
                 const header = document.querySelector("header");
                 const headerHeight = header ? header.offsetHeight : 0;
+                const extraOffset = 15;
 
-                // Subtract header height from target position
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                // Subtract header height and extra offset from target position
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
                 const startPosition = window.pageYOffset;
                 const distance = targetPosition - startPosition;
                 let startTime = null;
@@ -212,6 +213,39 @@
 
                 requestAnimationFrame(animation);
             }
+
+            const targetElement = document.getElementById(sectionId);
+            if (!targetElement) return;
+
+            // Get the header height
+            const header = document.querySelector("header");
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            // Subtract header height from target position
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function easeInOutQuad(time, start, change, duration) {
+                time /= duration / 2;
+                if (time < 1) return (change / 2) * time * time + start;
+                time--;
+                return (-change / 2) * (time * (time - 2) - 1) + start;
+            }
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
 
             // Replace the original scrollToSection with our custom smoothScrollTo
             function scrollToSection(sectionId) {
@@ -296,7 +330,7 @@
                 scrollToSection("step3");
             }
             window.selectClass = selectClass;
-            window.selectDeck = selectDeck;
+        window.selectDeck = selectDeck;
         });
     </script>
 </body>
