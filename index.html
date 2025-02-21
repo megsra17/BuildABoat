@@ -183,12 +183,16 @@
                 const targetElement = document.getElementById(sectionId);
                 if (!targetElement) return;
 
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                // Get the header height
+                const header = document.querySelector("header");
+                const headerHeight = header ? header.offsetHeight : 0;
+
+                // Subtract header height from target position
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 const startPosition = window.pageYOffset;
                 const distance = targetPosition - startPosition;
                 let startTime = null;
 
-                // Easing function for smooth animation
                 function easeInOutQuad(time, start, change, duration) {
                     time /= duration / 2;
                     if (time < 1) return (change / 2) * time * time + start;
@@ -196,7 +200,6 @@
                     return (-change / 2) * (time * (time - 2) - 1) + start;
                 }
 
-                // Animation function using requestAnimationFrame
                 function animation(currentTime) {
                     if (startTime === null) startTime = currentTime;
                     const timeElapsed = currentTime - startTime;
