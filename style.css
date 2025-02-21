@@ -219,4 +219,9 @@ header {
   .boat-deck:hover {
     border: none;
   }
+
+  .btn-responsive {
+    width: auto !important;
+    white-space: nowrap;
+  }
 }

@@ -140,12 +140,12 @@
             <!-- <div class="circle-number">3</div> -->
             <h3 class="fw-light my-3 text-center"><strong>Step 3 of 3: </strong>Choose a Length</h3>
             <div id="vclass-length" class="d-none d-flex justify-content-center gap-3 mt-5 mb-50">
-                <a id="v700t" class="btn btn-primary px-4 w-25">31 FT</a> <!-- V700T -->
-                <a id="v25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- V25 QS -->
+                <a id="v700t" class="btn btn-primary btn-responsive px-4 w-25">31 FT</a> <!-- V700T -->
+                <a id="v25QS" class="btn btn-primary btn-responsive px-4 w-25">25 FT</a> <!-- V25 QS -->
             </div>
             <div id="lclass-length" class="d-none d-flex justify-content-center gap-3 mt-5 mb-50">
-                <a id="L23QS" class="btn btn-primary px-4 w-25">23 FT</a> <!-- L23 QS -->
-                <a id="L25QS" class="btn btn-primary px-4 w-25">25 FT</a> <!-- L25 QS -->
+                <a id="L23QS" class="btn btn-primary btn-responsive px-4 w-25">23 FT</a> <!-- L23 QS -->
+                <a id="L25QS" class="btn btn-primary btn-responsive px-4 w-25">25 FT</a> <!-- L25 QS -->
             </div>
         </section>
         <button id="backToTop" class="back-to-top" aria-label="Back to top"><span>^</span></button>
@@ -186,7 +186,7 @@
                 // Get the header height
                 const header = document.querySelector("header");
                 const headerHeight = header ? header.offsetHeight : 0;
-                const extraOffset = 20; // additional pixels to subtract
+                const extraOffset = 15;
 
                 // Subtract header height and extra offset from target position
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
