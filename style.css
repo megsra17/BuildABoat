@@ -208,7 +208,15 @@ header {
     border: none;
   }
 
+  .class-boxz:hover {
+    border: none;
+  }
+
   .boat-deck {
+    border: none;
+  }
+
+  .boat-deck:hover {
     border: none;
   }
 }

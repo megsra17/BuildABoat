@@ -179,7 +179,7 @@
 
         document.addEventListener("DOMContentLoaded", function () {
             // Custom smooth scroll function with adjustable duration
-            function smoothScrollTo(sectionId, duration = 1000) {
+            function smoothScrollTo(sectionId, duration = 1200) {
                 const targetElement = document.getElementById(sectionId);
                 if (!targetElement) return;
 
@@ -212,7 +212,7 @@
 
             // Replace the original scrollToSection with our custom smoothScrollTo
             function scrollToSection(sectionId) {
-                smoothScrollTo(sectionId, 1000); // Adjust the duration (ms) as needed
+                smoothScrollTo(sectionId, 1200); // Adjust the duration (ms) as needed
             }
 
             function selectClass(selectedClass) {
